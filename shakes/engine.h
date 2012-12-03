@@ -48,10 +48,10 @@ namespace Shakes {
 		private:
 		// -- GENERAL
 			//bool glInitialize(void);
-			bool initialize(void);
 			bool uninitialize(void);
 		
 		public:
+			bool initialize(void);
 			int run(void);
 		
 		// -- ACCESSOR METHODS
