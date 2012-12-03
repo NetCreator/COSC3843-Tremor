@@ -1,0 +1,1 @@
+Folder for the enemy sprite assets. Should only contain graphical sprite data. Sounds should all be stored under the upper sound directory.

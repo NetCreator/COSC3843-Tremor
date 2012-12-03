@@ -1,0 +1,1 @@
+Folder for the musical assets. Sounds belong in the sounds folder. Not here.

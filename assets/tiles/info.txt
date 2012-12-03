@@ -1,0 +1,1 @@
+Folder for the graphic tile data. DO NOT PLACE TILE DESCRIPTION FILES HERE. Go to data you creeps!

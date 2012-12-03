@@ -1,0 +1,1 @@
+Folder for the sounds data. Organization is up to the first contributor, but as most foley is used in a number of cases, I reccomend just dumping all sounds in here explicitely.
