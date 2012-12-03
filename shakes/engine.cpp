@@ -33,8 +33,6 @@ Shakes::Engine::~Engine(void)
 	std::cout << Shakes::Engine::NAME << " SHUTTING DOWN" << std::endl;
 	
 	this->uninitialize();
-	
-	std::cout << Shakes::Engine::NAME << " UNINITIALIZED" << std::endl;
 }
 
 // ##### OBJECT METHODS #####
