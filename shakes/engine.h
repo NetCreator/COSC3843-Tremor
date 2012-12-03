@@ -8,7 +8,7 @@
 // # Status:        INCOMPLETE
 // # Todo:        * FINISH METHOD DECLARATIONS
 // # Created:       11.22.2012:1508
-// # Last Modified: 12.3.2012:1627
+// # Last Modified: 12.3.2012:1647
 // #############################################################################
 
 #ifndef __SHAKES_ENGINE
@@ -65,6 +65,12 @@ namespace Shakes {
 		
 		public:
 		// -- ACCESSOR METHODS
+			void setWidth(int width) { this->width = width; }
+			void setHeight(int height) { this->height = height;}
+			
+			int getWidth(void) { return this->width; }
+			int getHeight(void) { return this->height; } 
+			
 			std::string getFancyName(void);
 		
 		// -- DEBUG

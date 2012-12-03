@@ -44,6 +44,8 @@ Shakes::Engine::~Engine(void)
 bool Shakes::Engine::initialize(void)
 {
 	std::cout << Shakes::Engine::NAME << " INITIALIZED" << std::endl;
+	
+	this->glInitialize();
 }
 
 /* Do all the required OpenGL initialization.
