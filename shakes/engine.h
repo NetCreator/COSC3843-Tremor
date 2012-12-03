@@ -8,7 +8,7 @@
 // # Status:        INCOMPLETE
 // # Todo:        * FINISH METHOD DECLARATIONS
 // # Created:       11.22.2012:1508
-// # Last Modified: 12.3.2012:1503
+// # Last Modified: 12.3.2012:1627
 // #############################################################################
 
 #ifndef __SHAKES_ENGINE
@@ -36,7 +36,9 @@ namespace Shakes {
 		
 		// OBJECT MEMBER DECLARATION --
 		private:
-			State state;
+			int width, height; // resolution
+			
+			State state;       // current engine state
 		
 		// OBJECT METHODS --
 		public:
@@ -54,6 +56,14 @@ namespace Shakes {
 			bool initialize(void);
 			int run(void);
 		
+		public:
+		// -- FUNCTION REGISTERS
+			void registerInitializeFunc(/** FILL LATER **/);
+			void registerUninitializeFunc(/** FILL LATER **/);
+			void registerDrawFunc(/** FILL LATER **/);
+			void registerUpdateFunc(/** FILL LATER **/);
+		
+		public:
 		// -- ACCESSOR METHODS
 			std::string getFancyName(void);
 		
