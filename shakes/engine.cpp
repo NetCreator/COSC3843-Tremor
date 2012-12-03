@@ -46,6 +46,8 @@ bool Shakes::Engine::initialize(void)
 	std::cout << Shakes::Engine::NAME << " INITIALIZED" << std::endl;
 	
 	this->glInitialize();
+	
+	return true;
 }
 
 /* Do all the required OpenGL initialization.
@@ -57,20 +59,20 @@ bool Shakes::Engine::initialize(void)
  * params: none
  * returns: successful or not (true/false)
  */
-/*
 bool Shakes::Engine::glInitialize(void)
 {
 	//INITIALIZE GLUT AND WINDOW --
-	glutInit(&arc, argv);
+	glutInit(0, NULL);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(this->windowWidth, this->windowHeight);
-	glutCreateWindow(this->getFancyName());
+	glutCreateWindow(this->getFancyName().c_str());
 	
 	//SETUP GL FUNCTIONS --
 	glViewport(0, 0, this->windowWidth, this->windowHeight);
 	glClearColor(0.0, 0.0, 0.0, 1.0);
+	
+	return true;
 }
-*/
 
 /* Uninitializes any required areas of the engine.
  * Unallocates any heap-based storage.
@@ -81,6 +83,8 @@ bool Shakes::Engine::glInitialize(void)
 bool Shakes::Engine::uninitialize(void)
 {
 	std::cout << Shakes::Engine::NAME << " UNINITIALIZED" << std::endl;
+	
+	return true;
 }
 
 /* Starts the game/engine. Control should entirely be passed
@@ -92,11 +96,8 @@ bool Shakes::Engine::uninitialize(void)
  */
 int Shakes::Engine::run(void)
 {
-	while(this->state != Shakes::Engine::STATE_QUIT) {
-		std::cout << "Running..." << std::endl;
-		
-		this->state = Shakes::Engine::STATE_QUIT;
-	}
+	//Start GLUT!
+	glutMainLoop();
 	
 	return 0;
 }

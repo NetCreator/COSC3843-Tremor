@@ -36,7 +36,7 @@ namespace Shakes {
 		
 		// OBJECT MEMBER DECLARATION --
 		private:
-			int width, height; // resolution
+			int windowWidth, windowHeight; // resolution
 			
 			State state;       // current engine state
 		
@@ -49,7 +49,7 @@ namespace Shakes {
 		
 		private:
 		// -- GENERAL
-			//bool glInitialize(void);
+			bool glInitialize(void);
 			bool uninitialize(void);
 		
 		public:
@@ -65,11 +65,11 @@ namespace Shakes {
 		
 		public:
 		// -- ACCESSOR METHODS
-			void setWidth(int width) { this->width = width; }
-			void setHeight(int height) { this->height = height;}
+			void setWidth(int windowWidth) { this->windowWidth = windowWidth; }
+			void setHeight(int windowHeight) { this->windowHeight = windowHeight;}
 			
-			int getWidth(void) { return this->width; }
-			int getHeight(void) { return this->height; } 
+			int getWidth(void) { return this->windowWidth; }
+			int getHeight(void) { return this->windowHeight; } 
 			
 			std::string getFancyName(void);
 		
