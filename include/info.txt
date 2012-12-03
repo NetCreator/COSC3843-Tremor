@@ -1,0 +1,1 @@
+Folder includes a handful of library files that may be necessary for compilation. This is mostly for consistancy if people don't have the same implementations of GL/GLUT.
