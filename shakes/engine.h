@@ -54,6 +54,10 @@ namespace Shakes {
 			bool glInitialize(void);
 			bool uninitialize(void);
 		
+		// -- GL CALLBACKS
+			static void glIdle(void);
+			static void glDisplay(void);
+		
 		public:
 			bool initialize(void);
 			int run(void);

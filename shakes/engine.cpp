@@ -15,7 +15,7 @@
 const std::string Shakes::Engine::NAME = "Shakes";
 
 // ##### CONSTRUCTORS #####
-Shakes::Engine::Engine(void): state(Shakes::Engine::STATE_MENU), windowTitle(this->getFancyName())
+Shakes::Engine::Engine(void): state(Shakes::Engine::STATE_MENU), windowTitle(this->getFancyName()), windowWidth(640), windowHeight(480)
 {
 	std::cout << Shakes::Engine::NAME << " INITIALIZED" << std::endl
 	          << this->getEngineStateDump() << std::endl;
@@ -62,14 +62,19 @@ bool Shakes::Engine::initialize(void)
 bool Shakes::Engine::glInitialize(void)
 {
 	//INITIALIZE GLUT AND WINDOW --
-	glutInit(0, NULL);
+	//int passcode = 0;
+	//glutInit(&passcode, NULL);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(this->windowWidth, this->windowHeight);
 	glutCreateWindow(this->windowTitle.c_str());
 	
 	//SETUP GL FUNCTIONS --
 	glViewport(0, 0, this->windowWidth, this->windowHeight);
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+	
+	//REGISTER GL CALLBACKS --
+	glutIdleFunc(Shakes::Engine::glIdle);
+	glutDisplayFunc(Shakes::Engine::glDisplay);
 	
 	return true;
 }
@@ -132,4 +137,39 @@ std::string Shakes::Engine::getEngineStateDump(void)
 	          << "\t+ internal state: " << this->state << std::endl;
 	
 	return stateDump.str();
+}
+
+/* The idle callback function for GLUT, currently
+ *  only requests a redraw.
+ *
+ * params: none
+ * returns: none
+ */
+void Shakes::Engine::glIdle(void)
+{
+	glutPostRedisplay();
+}
+
+/* The display callback function for GLUT, draws
+ *  whatever is needed to the screen.
+ *
+ * params: none
+ * returns: none
+ */
+void Shakes::Engine::glDisplay(void)
+{
+	Shakes::Engine::State temp;
+	
+	temp = Shakes::Engine::STATE_MENU;
+	switch(temp) {
+		case Shakes::Engine::STATE_MENU:
+			glMatrixMode(GL_MODELVIEW);
+			glPushMatrix();
+			glTranslatef(0, 5.0, 0);
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, 'D');
+			glPopMatrix();
+			break;
+		
+		default: break;
+	}
 }
