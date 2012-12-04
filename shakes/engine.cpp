@@ -6,7 +6,7 @@
 // # Status:        INCOMPLETE
 // # Todo:          FINISH METHOD IMPLEMENTATIONS
 // # Created:       11.22.2012:1518
-// # Last Modified: 12.3.2012:1445
+// # Last Modified: 12.3.2012:1923
 // #############################################################################
 
 #include "engine.h"
@@ -15,7 +15,7 @@
 const std::string Shakes::Engine::NAME = "Shakes";
 
 // ##### CONSTRUCTORS #####
-Shakes::Engine::Engine(void): state(Shakes::Engine::STATE_MENU)
+Shakes::Engine::Engine(void): state(Shakes::Engine::STATE_MENU), windowTitle(this->getFancyName())
 {
 	std::cout << Shakes::Engine::NAME << " INITIALIZED" << std::endl
 	          << this->getEngineStateDump() << std::endl;
@@ -65,7 +65,7 @@ bool Shakes::Engine::glInitialize(void)
 	glutInit(0, NULL);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(this->windowWidth, this->windowHeight);
-	glutCreateWindow(this->getFancyName().c_str());
+	glutCreateWindow(this->windowTitle.c_str());
 	
 	//SETUP GL FUNCTIONS --
 	glViewport(0, 0, this->windowWidth, this->windowHeight);

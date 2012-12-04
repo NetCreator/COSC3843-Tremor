@@ -8,7 +8,7 @@
 // # Status:        INCOMPLETE
 // # Todo:        * FINISH METHOD DECLARATIONS
 // # Created:       11.22.2012:1508
-// # Last Modified: 12.3.2012:1647
+// # Last Modified: 12.3.2012:1923
 // #############################################################################
 
 #ifndef __SHAKES_ENGINE
@@ -38,7 +38,9 @@ namespace Shakes {
 		private:
 			int windowWidth, windowHeight; // resolution
 			
-			State state;       // current engine state
+			State state;                   // current engine state
+			
+			std::string windowTitle;       // title of the main window
 		
 		// OBJECT METHODS --
 		public:
@@ -66,10 +68,12 @@ namespace Shakes {
 		public:
 		// -- ACCESSOR METHODS
 			void setWidth(int windowWidth) { this->windowWidth = windowWidth; }
-			void setHeight(int windowHeight) { this->windowHeight = windowHeight;}
+			void setHeight(int windowHeight) { this->windowHeight = windowHeight; }
+			void setWindowTitle(std::string windowTitle) { this->windowTitle = windowTitle; }
 			
 			int getWidth(void) { return this->windowWidth; }
 			int getHeight(void) { return this->windowHeight; } 
+			std::string getWindowTitle(void) { return this->windowTitle; }
 			
 			std::string getFancyName(void);
 		
