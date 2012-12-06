@@ -18,7 +18,7 @@
 #include <string>
 #include <sstream>
 
-#include <GL/glut.h>
+#include <GLUT/glut.h>
 
 namespace Shakes {
 	class Engine
