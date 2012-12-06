@@ -10,9 +10,9 @@
 // # Status:        INCOMPLETE
 // # Todo:        * FLESH OUT INTERFACE
 // #              * Pass copy of whatever reference Entity::update() might need
-// #              * Implmement resource manager into sprite loading
-// # Created:       11.22.2012:1508
-// # Last Modified: 12.3.2012:1923
+// #              * Setup resource manager for asset load (if necessary)
+// # Created:       12.6.2012:0812
+// # Last Modified: 12.6.2012:1058
 // #############################################################################
 
 #ifndef __SHAKES_ENTITY
@@ -34,8 +34,9 @@ namespace Shakes
 		// OBJECT METHODS --
 		public:
 		// -- CONSTRUCTOR/DECONSTRUCTOR
-			virtual Entity(void): x(0), y(0), z(0);
-			virtual ~Entity(void);
+			virtual Entity(void): x(0), y(0), z(0) {};
+			virtual Entity(int x, int y, int z): x(x), y(y), z(z) {};
+			virtual ~Entity(void) {};
 		
 		// -- GENERAL
 			virtual void update(void) = 0;                          // Updates the object this entity represents.
@@ -44,10 +45,14 @@ namespace Shakes
 			virtual void loadGraphic(std::string fullFilePath) = 0; // Loads the graphic uses the full path, including name and extension.
 		
 		// -- ACCESSOR METHODS
-			void setX(int x) { this->x = x; }
-			void setY(int y) { this->y = y; }
-			void setZ(int z) { this->z = z; }
-			void setPosition(int x, int y, int z) { this->x = x; this->y = y; this->z = z; }
+			virtual void setX(int x) { this->x = x; }
+			virtual void setY(int y) { this->y = y; }
+			virtual void setZ(int z) { this->z = z; }
+			virtual void setPosition(int x, int y, int z) { this->x = x; this->y = y; this->z = z; }
+			
+			virtual void getX(void) { return this->x; }
+			virtual void getY(void) { return this->y; }
+			virtual void getZ(void) { return this->z; }
 	}
 }
 
