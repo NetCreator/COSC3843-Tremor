@@ -34,8 +34,8 @@ namespace Shakes
 		// OBJECT METHODS --
 		public:
 		// -- CONSTRUCTOR/DECONSTRUCTOR
-			virtual Engine(void);
-			virtual ~Engine(void);
+			virtual Entity(void);
+			virtual ~Entity(void);
 		
 		// -- GENERAL
 			virtual void update(void) = 0;                          // Updates the object this entity represents.
