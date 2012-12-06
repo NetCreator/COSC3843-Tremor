@@ -34,7 +34,7 @@ namespace Shakes
 		// OBJECT METHODS --
 		public:
 		// -- CONSTRUCTOR/DECONSTRUCTOR
-			virtual Entity(void);
+			virtual Entity(void): x(0), y(0), z(0);
 			virtual ~Entity(void);
 		
 		// -- GENERAL
