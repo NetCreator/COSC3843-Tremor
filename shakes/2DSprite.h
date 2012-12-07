@@ -15,7 +15,7 @@
 #ifndef __SHAKES_2DSPRITE
 #define __SHAKES_2DSPRITE
 
-#include <GL/glut.h>
+#include "../GL/glut.h"
 
 #include "entity.h"
 
